@@ -48,8 +48,6 @@ jobs:
       uses: gradle/gradle-build-action@v2
       with:
         gradle-version: 7.5.1
-        name: main-gitactions-SNAPSHOT
-        path: main/build/libs/*.jar
     - run: |
         cd main
         gradle wrapper
