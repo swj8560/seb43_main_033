@@ -82,5 +82,6 @@ jobs:
 #       run: echo "Runner IP: ${{ github.runner.ip }}"
       
     - name: Get Runner IP
-        run: echo "Runner IP: $(curl -s https://api.ipify.org)"  
+      run: |
+        echo "Runner IP: $(curl -s https://api.ipify.org)"  
       
