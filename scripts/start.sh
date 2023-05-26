@@ -1,4 +1,4 @@
-PROJECT_ROOT="/home/ubuntu/seb43_main_033/"
+PROJECT_ROOT="/home/ubuntu/seb43_main_033"
 JAR_NAME="$PROJECT_ROOT/main-0.0.1-SNAPSHOT.jar"
 
 APP_LOG="$PROJECT_ROOT/application.log"
