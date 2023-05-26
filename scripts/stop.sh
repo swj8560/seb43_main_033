@@ -11,9 +11,26 @@ CURRENT_PID=$(pgrep -f $JAR_NAME)
 
 echo "$TIME_NOW > 현재 실행중인 PID는 $CURRENT_PID 입니다." >> $DEPLOY_LOG
 
-# if [ -z $CURRENT_PID ]; then
-#         echo "$TIME_NOW > 현재 실행중인 애플리케이션이 없습니다" >> $DEPLOY_LOG
-# else
-#         echo "$TIME_NOW > 실행중인 $CURRENT_PID 애플리케이션 종료 " >> $DEPLOY_LOG
-#         kill -15 $CURRENT_PID
-# fi
+if [ -z $CURRENT_PID ]; then
+    echo "$TIME_NOW > 현재 실행중인 애플리케이션이 없습니다" >> $DEPLOY_LOG
+else
+    echo "$TIME_NOW > 실행중인 $CURRENT_PID 애플리케이션 종료 시도 " >> $DEPLOY_LOG
+    kill -15 $CURRENT_PID
+    
+    sleep 3
+    
+    if pgrep -f $JAR_NAME > /dev/null; then
+        echo "$TIME_NOW > $CURRENT_PID 애플리케이션이 아직 종료되지 않았습니다. 5초 후에도 종료되지 않으면 강제 종료합니다." >> $DEPLOY_LOG
+        sleep 5
+    else
+        echo "$TIME_NOW > $CURRENT_PID 애플리케이션이 정상적으로 종료되었습니다." >> $DEPLOY_LOG
+    fi
+   
+    if pgrep -f $JAR_NAME > /dev/null; then
+        echo "$TIME_NOW > $CURRENT_PID 애플리케이션 종료하지 못했습니다. 강제 종료합니다." >> $DEPLOY_LOG
+        kill -9 $CURRENT_PID
+    else
+        echo "$TIME_NOW > $CURRENT_PID 애플리케이션이 정상적으로 종료되었습니다." >> $DEPLOY_LOG
+    fi
+fi
+
