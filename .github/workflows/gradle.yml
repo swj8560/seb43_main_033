@@ -12,7 +12,6 @@ env:
   S3_BUCKET_NAME: main-github-actions-s3-bucket
   CODE_DEPLOY_APPLICATION_NAME: main-codedeploy-app
   CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: main-codedeploy-deployment-group
-  githubActionsBuild: true
 
 permissions:
   contents: read
