@@ -49,7 +49,7 @@ jobs:
     - run: |
         cd main
         gradle wrapper
-        ./gradlew clean build
+        ./gradlew test -i
         
 
 #     - name: Configure AWS credentials
