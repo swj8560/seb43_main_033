@@ -34,8 +34,8 @@ jobs:
         
     - name: Set YML
       run: |
-        mkdir -p main/src/main/resources
-        echo ${{ secrets.APPLICATION_YML }} | base64 --decode > main/src/main/resources/application.yml
+        mkdir -p src/main/resources
+        echo ${{ secrets.APPLICATION_YML }} | base64 --decode > src/main/resources/application.yml
         find main    
         
     - name: init with Gradle
