@@ -10,8 +10,8 @@ TIME_NOW=$(date +%c)
 echo "$TIME_NOW > $JAR_NAME 파일 복사" >> $DEPLOY_LOG
 cp $PROJECT_ROOT/main/build/libs/*.jar $JAR_NAME
 
-# echo "$TIME_NOW > $JAR_NAME 파일 실행" >> $DEPLOY_LOG
-# nohup java -jar $JAR_NAME > $APP_LOG 2> $ERROR_LOG &
+echo "$TIME_NOW > $JAR_NAME 파일 실행" >> $DEPLOY_LOG
+nohup java -jar $JAR_NAME > $APP_LOG 2> $ERROR_LOG &
 
-# CURRENT_PID=$(pgrep -f $JAR_NAME)
-# echo "$TIME_NOW > 실행된 프로세스 아이디 $CURRENT_PID 입니다." >> $DEPLOY_LOG
+CURRENT_PID=$(pgrep -f $JAR_NAME)
+echo "$TIME_NOW > 실행된 프로세스 아이디 $CURRENT_PID 입니다." >> $DEPLOY_LOG
