@@ -1,6 +1,8 @@
 PROJECT_ROOT="/home/ubuntu/seb43_main_033"
 JAR_NAME="$PROJECT_ROOT/main/build/libs/main-0.0.1-SNAPSHOT.jar"
 
+touch "$PROJECT_ROOT/log"
+
 DEPLOY_LOG="$PROJECT_ROOT/log/deploy.log"
 
 TIME_NOW=$(date +%c)
