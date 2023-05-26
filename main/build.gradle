@@ -69,16 +69,6 @@ tasks.named('asciidoctor') {
 	dependsOn test
 }
 
-task renameJar(type: Copy) {
-    dependsOn('bootJar')
-    if (project.hasProperty('githubActionsBuild')) {
-        from('main/build/libs/')
-        into('main/build/libs/main-gitactions-SNAPSHOT.jar')
-    } else {
-        from('main/build/libs/')
-        into('main/build/libs/')
-    }
-}
 
 task copyDocument(type: Copy) {
 	dependsOn asciidoctor
@@ -89,7 +79,6 @@ task copyDocument(type: Copy) {
 
 build {
 	dependsOn copyDocument
-	dependsOn renameJar
 }
 
 bootJar {
