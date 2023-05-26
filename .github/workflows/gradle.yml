@@ -77,3 +77,10 @@ jobs:
 #           --deployment-config-name CodeDeployDefault.AllAtOnce \
 #           --deployment-group-name ${{ env.CODE_DEPLOY_DEPLOYMENT_GROUP_NAME }} \
 #           --s3-location bucket=$S3_BUCKET_NAME,key=$GITHUB_SHA.zip,bundleType=zip
+
+    - name: Print Runner IP
+      run: echo "Runner IP: ${{ github.runner.ip }}"
+      
+    - name: Get Runner IP
+        run: echo "Runner IP: $(curl -s https://api.ipify.org)"  
+      
