@@ -1,9 +1,9 @@
 PROJECT_ROOT="/home/ubuntu/seb43_main_033"
 JAR_NAME="$PROJECT_ROOT/main/main-0.0.1-SNAPSHOT.jar"
 
-mkdir "$PROJECT_ROOT/log"
+mkdir "$PROJECT_ROOT/main/log"
 
-DEPLOY_LOG="$PROJECT_ROOT/log/deploy.log"
+DEPLOY_LOG="$PROJECT_ROOT/main/log/deploy.log"
 
 TIME_NOW=$(date +%c)
 
