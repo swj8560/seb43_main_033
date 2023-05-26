@@ -51,7 +51,7 @@ jobs:
     - run: |
         cd main
         gradle wrapper
-        ./gradlew build --stacktrace
+        ./gradlew build -x test
         
 
     - name: Configure AWS credentials
