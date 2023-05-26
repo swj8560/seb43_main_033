@@ -313,8 +313,8 @@ public class StatusOfWorkControllerTest implements StatusOfWorkHelper {
     public void requestVacationTest() throws Exception {
         VacationDto.Post post = new VacationDto.Post();
         post.setCompanyId(1L);
-        post.setVacationStart(LocalDate.MIN);
-        post.setVacationEnd(LocalDate.MAX);
+        post.setVacationStart(LocalDate.now());
+        post.setVacationEnd(LocalDate.now());
         String content = toJsonContent(post);
 
         given(statusOfWorkMapper.postToRequestVacation(Mockito.any(VacationDto.Post.class))).willReturn(new RequestVacation());
