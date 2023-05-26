@@ -1,9 +1,9 @@
 PROJECT_ROOT="/home/ubuntu/seb43_main_033"
-JAR_NAME="$PROJECT_ROOT/main-0.0.1-SNAPSHOT.jar"
+JAR_NAME="$PROJECT_ROOT/main/build/libs/main-0.0.1-SNAPSHOT.jar"
 
-APP_LOG="$PROJECT_ROOT/application.log"
-ERROR_LOG="$PROJECT_ROOT/error.log"
-DEPLOY_LOG="$PROJECT_ROOT/deploy.log"
+APP_LOG="$PROJECT_ROOT/log/application.log"
+ERROR_LOG="$PROJECT_ROOT/log/error.log"
+DEPLOY_LOG="$PROJECT_ROOT/log/deploy.log"
 
 TIME_NOW=$(date +%c)
 
